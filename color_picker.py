@@ -3,10 +3,18 @@ from tkinter import ttk
 
 chosen = None
 
-def bet_turtle():
+def choose_color():
     root = tk.Tk()
+
+    screen_width = root.winfo_screenwidth()
+    screen_height = root.winfo_screenheight()
+    width = 310
+    height = 132
+    pos_x = (screen_width - width) // 2
+    pos_y = (screen_height - height) // 2
+
     root.title("Make your bet")
-    root.geometry("310x132")
+    root.geometry(f"{width}x{height}+{pos_x}+{pos_y}")
     root.resizable(False, False)
 
     txt = ttk.Label(root, text="Which turtle will win the race? Enter a color ", padding=10)
@@ -36,4 +44,4 @@ def bet_turtle():
     return chosen
 
 
-# print(bet_turtle())
+# print(choose_color())
